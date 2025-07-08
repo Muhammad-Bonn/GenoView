@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GenoView</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: auto; padding: 2em; }
+        textarea { width: 100%; height: 100px; }
+        button { padding: 10px 20px; margin-top: 10px; }
+        pre { background: #f4f4f4; padding: 1em; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>🔬 GenoView - Gene Analyzer</h1>
+    <form method="POST">
+        <label for="fasta">Enter gene sequence (e.g., DREB2A ARF NHX1):</label><br><br>
+        <textarea name="fasta" required></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+        <h2>Results:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>
+
